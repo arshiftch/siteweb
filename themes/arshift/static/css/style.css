@@ -91,6 +91,7 @@ main{
 
 #home{
   display: flex;
+  min-height: 500px;
   height: 100vh;
   height: -webkit-fill-available;
   width: 100vw;
