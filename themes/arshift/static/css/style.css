@@ -94,7 +94,7 @@ main{
   height: 96vh;
   height: -webkit-fill-available;
   width: 96vw;
-  margin: 2vh auto;
+  margin: 0 auto;
   flex-direction: column-reverse;
   justify-content: space-between;
 }  
@@ -152,7 +152,7 @@ h1, .h1, .h-huge {
   font-size: clamp(1.8em,calc(2em + 4vw),100px);
   line-height: 1.1em;
   font-weight: normal;
-  margin-top: 0;
+  margin-top: 0.2em;
   margin-bottom: 0;
 }
 h2, .h2 {
