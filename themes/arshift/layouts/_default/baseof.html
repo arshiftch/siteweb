@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode | default "en-us" }}" class="no-js">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>{{ .Title }}</title>
+	{{ with .Site.Params.description }}<meta name="description" content="{{ . }}">{{ end }}
+	<link rel="author" href="{{ "humans.txt" | relURL }}" />
+	<link rel="manifest" href="/manifest.json">
+	<link rel="stylesheet" href="{{ "css/style.css?20210624-0001" | relURL }}">
+	<script>
+		document.documentElement.className = document.documentElement.className.replace("no-js","js");
+	</script>
+	
+	<script async defer data-domain="" src="https://plausible.io/js/plausible.js"></script>	
+	<script>
+		// Register our service-worker
+		// if (navigator.serviceWorker) {
+		// 	window.addEventListener('load', function() {
+		// 		navigator.serviceWorker.register('/sw.js', {
+		// 			scope: '/'
+		// 		});
+		// 		if (navigator.serviceWorker.controller) {
+		// 			navigator.serviceWorker.controller.postMessage({'command': 'trimCaches'});
+		// 		}
+		// 	});
+		// }
+	</script>  
+</head>
+<body>
+	{{ partial "header" . }}
+	<main class="container">
+		{{ block "main" . }}{{ end }}
+	</main>
+	{{ partial "footer" . }}
+</body>
+</html>

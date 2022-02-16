@@ -1,0 +1,19 @@
+baseURL = "https://arshift.ch"
+languageCode = "fr-ch"
+title = "AR shift - "
+description = ""
+theme = "arshift"
+
+[markup]
+  [markup.goldmark]
+	[markup.goldmark.renderer]
+	  unsafe = true
+
+[menu]
+
+  [[menu.main]]
+		identifier = "home"
+		name = "Accueil"
+		url = "/"
+		weight = 2 
+		

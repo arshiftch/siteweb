@@ -1,0 +1,11 @@
+name = "arshift"
+license = "MIT"
+licenselink = ".../blob/master/LICENSE"
+description = "From blank Starter https://github.com/vimux/blank/ Hugo theme for developers. We built a blue theme to match INR branding guildelines"
+homepage = "https://github.com/zufrieden"
+min_version = "0.20"
+
+[author]
+  name = "zufrieden"
+  homepage = "https://github.com/zufrieden"
+

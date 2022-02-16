@@ -1,0 +1,13 @@
+/* TEAM */
+
+Developer: Marc Friederich
+Email : m [at] zufrieden.io
+Twitter: @zufrieden
+From: Lausanne, Switzerland
+
+/* SITE */
+Language: French
+Doctype: HTML5
+IDE: Panic Nova
+Generator : HUGO
+Theme : Based on https://github.com/vimux/blank/
