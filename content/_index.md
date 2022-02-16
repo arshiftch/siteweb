@@ -9,10 +9,10 @@ title: ARShift Sàrl - Architecture durable
 
 # ARshift
 ## Sustainable building
+<br/>
 
 Rue de Bugnaux 8 <br/>
-CH-1180 Rolle
-
+CH-1180 Rolle<br/>
 [+41 78 896 21 00](tel:+41788962100)<br/>
 [info@ARshift.ch](mailto:info@ARshift.ch)
 

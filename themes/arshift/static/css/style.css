@@ -45,15 +45,15 @@
 
 
 html{
-  font-size: 110%;
+  font-size: 80%;
 }
 
 body{
   background-color: var(--white);
   color: var(--black);
   font-family: 'avenir next', avenir, 'helvetica neue', -apple-system,ubuntu,roboto,noto,segoe ui,arial,sans-serif;
-  font-size: calc(1em + 0.5vw);
-  font-size: clamp(1em,calc(1em + 1vw),24px);
+  font-size: calc(0.8em + 0.5vw);
+  font-size: clamp(0.8em,calc(0.8em + 1vw),24px);
   margin: 0;
   padding: 0;
 }
