@@ -94,16 +94,23 @@ main{
   height: 96vh;
   width: 96vw;
   margin: 2vh auto;
-  flex-direction: row-reverse;
+  flex-direction: column-reverse;
   justify-content: space-between;
-  align-items: flex-end;
+}  
+@media (min-width: 60em) {
+  #home{
+    align-items: flex-end;
+    flex-direction: row-reverse;
+  }
 }
+
+
 #logo{
   min-width: 300px;
   max-width: 700px;
   width: 40vw;
   height: auto;
-  
+  align-self: flex-end;
 }
 
 img{
