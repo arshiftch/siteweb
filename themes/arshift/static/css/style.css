@@ -91,9 +91,9 @@ main{
 
 #home{
   display: flex;
-  height: 96vh;
+  height: 100vh;
   height: -webkit-fill-available;
-  width: 96vw;
+  width: 100vw;
   margin: 0 auto;
   flex-direction: column-reverse;
   justify-content: space-between;
@@ -110,10 +110,13 @@ main{
   width: 40vw;
   min-width: 300px;
   max-width: 700px;
+  margin: 15px;
   height: auto;
   align-self: flex-end;
 }
-
+.address{
+  margin: 15px;
+}
 img{
   max-width: 100%;
 }
@@ -152,12 +155,12 @@ h1, .h1, .h-huge {
   font-size: clamp(1.8em,calc(2em + 4vw),100px);
   line-height: 1.1em;
   font-weight: normal;
-  margin-top: 0.2em;
+  margin-top: 0;
   margin-bottom: 0;
 }
 h2, .h2 {
   font-size: calc(1.2em + 1vw);
-  font-size: clamp(1.6em,calc(1.2em + 1vw),60px);
+  font-size: clamp(1.3em,calc(1.2em + 1vw),60px);
   font-weight: normal;
   line-height: 1.3em;
   margin-top: 0;
