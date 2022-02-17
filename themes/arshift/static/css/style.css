@@ -47,7 +47,6 @@
 html{
   font-size: 90%;
 }
-
 body{
   background-color: var(--white);
   color: var(--black);
@@ -92,7 +91,6 @@ main{
 #home{
   display: flex;
   min-height: 500px;
-  height: 100vh;
   height: -webkit-fill-available;
   width: 100vw;
   margin: 0 auto;
@@ -101,6 +99,7 @@ main{
 }  
 @media (min-width: 60em) {
   #home{
+    height: 100vh;
     align-items: flex-end;
     flex-direction: row-reverse;
   }

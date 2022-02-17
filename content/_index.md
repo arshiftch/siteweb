@@ -11,9 +11,10 @@ title: ARShift Sàrl - Architecture durable
 ## Sustainable building
 <br/>
 
-Rue de Bugnaux 8 <br/>
-CH-1180 Rolle<br/>
-[+41 78 896 21 00](tel:+41788962100)<br/>
+Rue de Bugnaux 8<br/>
+CH-1186 Essertines-sur-Rolle<br/>
+Route de la Serraz 598<br/>
+FR-73370 Le Bourget-du-Lac<br/>
 [info@ARshift.ch](mailto:info@ARshift.ch)
 
 </div>
