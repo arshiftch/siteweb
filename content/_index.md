@@ -12,9 +12,11 @@ title: ARShift Sàrl - Architecture durable
 <br/>
 
 Rue de Bugnaux 8<br/>
-CH-1186 Essertines-sur-Rolle<br/>
+CH — 1186 Essertines-sur-Rolle
+
 Route de la Serraz 598<br/>
-FR-73370 Le Bourget-du-Lac<br/>
+FR — 73370 Le Bourget-du-Lac
+
 [info@ARshift.ch](mailto:info@ARshift.ch)
 
 </div>

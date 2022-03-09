@@ -99,7 +99,7 @@ main{
 }  
 @media (min-width: 60em) {
   #home{
-    height: 100vh;
+    height: 95vh;
     align-items: flex-end;
     flex-direction: row-reverse;
   }
