@@ -7,7 +7,7 @@ on:
 
 jobs:
   deploy:
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
 
@@ -21,9 +21,10 @@ jobs:
         run: hugo --minify
 
       - name: FTP Deploy
-        uses: SamKirkland/FTP-Deploy-Action@3.0.0
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
           ftp-server:  ${{ secrets.FTP_HOST }}
           ftp-username: ${{ secrets.FTP_USERNAME }}
           ftp-password: ${{ secrets.FTP_PASSWORD }}
           local-dir: public/
+          server-dir: ./sites/
