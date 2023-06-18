@@ -11,11 +11,9 @@ title: ARShift Sàrl - Architecture durable
 ## Sustainable building
 <br/>
 
-Rue de Bugnaux 8<br/>
-CH — 1186 Essertines-sur-Rolle
+Av. du Rond-Point 7<br/>
+CH — 1006 Lausanne
 
-Route de la Serraz 598<br/>
-FR — 73370 Le Bourget-du-Lac
 
 [info@ARshift.ch](mailto:info@ARshift.ch)
 
