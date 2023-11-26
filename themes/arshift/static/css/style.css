@@ -1,14 +1,42 @@
 :root {
   --black: hsla(345, 6%, 13%, 1);
   --white: hsl(0, 0%, 100%);
+  --color_white:  #E0E4ED;
+  --color_white:  color(display-p3 0.881 0.894 0.926);  
+  --color_dust:   #F7E6B2; 
+  --color_dust:   color(display-p3 1 0.912 0.609);   
+  --color_desert: #F7E18A; 
+  --color_desert: color(display-p3 1 0.9 0.463);   
+  --color_fall:   #F2D378; 
+  --color_fall:   color(display-p3 1 0.867 0.44);   
+  --color_kaki:   #605736; 
+  --color_kaki:   color(display-p3 0.348 0.314 0.177);   
+  --color_golf:   #2F3E04; 
+  --color_golf:   color(display-p3 0.264 0.349 0.01);   
+  --color_green:  #486206; 
+  --color_green:  color(display-p3 0.371 0.517 0.009);   
+  --color_greeny: #597E0E; 
+  --color_greeny: color(display-p3 0.401 0.594 0.007);   
+  --color_granny: #95944A; 
+  --color_granny: color(display-p3 0.637 0.631 0.127);   
+  --color_gold:   #C5AC10; 
+  --color_gold:   color(display-p3 1 0.851 0);   
+  --color_yellow: #F5D717; 
+  --color_yellow: color(display-p3 1 0.854 0);   
+  --color_orange: #E85E2F; 
+  --color_orange: color(display-p3 1 0.267 0);   
+  --color_red:    #EC201B; 
+  --color_red:    color(display-p3 1 0.078 0);   
+  --color_wine:   #C4060C; 
+  --color_wine:   color(display-p3 0.784 0.047 0);   
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
     --white: hsla(345, 6%, 13%, 1);
     --black: hsl(0, 0%, 100%);
     }
-}
+} */
 
 
 
@@ -44,17 +72,27 @@
 }
 
 
+
 html{
   font-size: 90%;
 }
 body{
-  background-color: var(--white);
-  color: var(--black);
+  background-color: var(--black);
+  color: var(--white);
+  background: linear-gradient(109deg, var(--color_fall), var(--color_kaki), var(--color_golf), var(--color_green), var(--color_greeny), var(--color_granny), var(--color_gold), var(--color_yellow), var(--color_orange), var(--color_red), var(--color_wine));
+  background-size: 1400% 1400%;
   font-family: 'avenir next', avenir, 'helvetica neue', -apple-system,ubuntu,roboto,noto,segoe ui,arial,sans-serif;
   font-size: calc(0.9em + 0.5vw);
   font-size: clamp(0.9em,calc(0.9em + 1vw),24px);
   margin: 0;
   padding: 0;
+  animation: shiftground 60s ease infinite;
+}
+
+@keyframes shiftground { 
+  0%{background-position:0% 27%}
+  50%{background-position:100% 74%}
+  100%{background-position:0% 27%}
 }
 
 main{
@@ -96,6 +134,7 @@ main{
   margin: 0 auto;
   flex-direction: column-reverse;
   justify-content: space-between;
+  opacity: 0.8;
 }  
 @media (min-width: 60em) {
   #home{
