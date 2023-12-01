@@ -1,6 +1,6 @@
 :root {
-  --black: hsla(345, 6%, 13%, 1);
-  --white: hsl(0, 0%, 100%);
+  --black: color(display-p3 0.138 0.18 0.011);
+  --white: color(display-p3 0.966 0.967 0.969);
   --color_white:  #E0E4ED;
   --color_white:  color(display-p3 0.881 0.894 0.926);  
   --color_dust:   #F7E6B2; 
@@ -31,12 +31,17 @@
   --color_wine:   color(display-p3 0.784 0.047 0);   
 }
 
-/* @media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: dark) {
   :root {
-    --white: hsla(345, 6%, 13%, 1);
-    --black: hsl(0, 0%, 100%);
+    --white:  color(display-p3 0.138 0.18 0.011);
+    --black:  color(display-p3 0.966 0.967 0.969);
     }
-} */
+}
+/* 
+
+background: rgb(247,230,178);
+background: linear-gradient(90deg, rgba(247,230,178,1) 47%, rgba(96,87,54,1) 47%, rgba(96,87,54,1) 47%, rgba(47,62,4,1) 48%, rgba(47,62,4,1) 52%, rgba(72,98,6,1) 52%, rgba(89,126,14,1) 55%, rgba(72,98,6,1) 60%, rgba(197,172,16,1) 60%, rgba(197,172,16,1) 80%, rgba(245,215,23,1) 90%, rgba(232,94,47,1) 90%, rgba(232,94,47,1) 91%, rgba(196,6,12,1) 92%, rgba(236,32,27,1) 100%);
+ */
 
 
 
@@ -77,15 +82,20 @@ html{
   font-size: 90%;
 }
 body{
-  background-color: var(--black);
-  color: var(--white);
-  background: linear-gradient(109deg, var(--color_fall), var(--color_kaki), var(--color_golf), var(--color_green), var(--color_greeny), var(--color_granny), var(--color_gold), var(--color_yellow), var(--color_orange), var(--color_red), var(--color_wine));
-  background-size: 1400% 1400%;
+  background-color: var(--white);
+  color: var(--black);
   font-family: 'avenir next', avenir, 'helvetica neue', -apple-system,ubuntu,roboto,noto,segoe ui,arial,sans-serif;
   font-size: calc(0.9em + 0.5vw);
   font-size: clamp(0.9em,calc(0.9em + 1vw),24px);
   margin: 0;
   padding: 0;
+}
+
+/* homepage */
+
+#homepage{
+  background: linear-gradient(109deg, var(--color_fall), var(--color_kaki), var(--color_golf), var(--color_green), var(--color_greeny), var(--color_granny), var(--color_gold), var(--color_yellow), var(--color_orange), var(--color_red), var(--color_wine));
+  background-size: 1400% 1400%;
   animation: shiftground 60s ease infinite;
 }
 
@@ -145,7 +155,7 @@ main{
 }
 
 
-#logo{
+#homepage #logo{
   width: 40vw;
   min-width: 300px;
   max-width: 700px;
@@ -153,31 +163,29 @@ main{
   height: auto;
   align-self: flex-end;
 }
-.address{
+#homepage .address{
   margin: 15px;
 }
-img{
+#homepage img{
   max-width: 100%;
 }
 
 a{
-  color: var(--crayola);
+  color: var(--color_greeny);
   text-decoration-skip-ink: auto;
   text-decoration: currentcolor underline;
 }
 a:hover{
-  /* color: var(--apple); */
+  color: var(--color_green);
 }
 
 a.button{
-  /* background-color: var(--apple);
-  color: var(--white);
-  border-radius: 0.5em;
+  background-color: var(--color_greeny);
+  color: var(--dust);
   display: inline-block;
   padding: 0.5em 1em;
   text-decoration: none;
-  transition: all 0.3s ease-in-out; */
-  /* faire clignoter :-) */
+  transition: all 0.3s ease-in-out;
 }
 a.button:hover{
   /* background-color: var(--apple2);
@@ -235,6 +243,10 @@ h4, .h4 {
 	margin-right: auto;
 }
 
+blockquote{
+  font-size:130%;
+}
+
 p, ul, ol, pre, table, blockquote {
   line-height: 1.56em;
   margin-top: 0;
@@ -259,7 +271,7 @@ input, textarea, keygen, select, button{
 }
 
 mark{
-  background-color: yellow;
+  background-color: var(--color_yellow);
 }
 
 
@@ -272,5 +284,57 @@ mark{
     display: block;
   }
 }
+.color-points{
+  display: flex;
+  width: 100%;
+  margin:1em 0;
+}
+.point{
+  height:4em;
+  width: 100%;
+}
+.color_white{
+  background-color: var(--color_white);
+}
+.color_dust{
+  background-color: var(--color_dust);
+}
+.color_desert{
+  background-color: var(--color_desert);
+}
+.color_fall{
+  background-color: var(--color_fall);
+}
+.color_kaki{
+  background-color: var(--color_kaki);
+}
+.color_golf{
+  background-color: var(--color_golf);
+}
+.color_green{
+  background-color: var(--color_green);
+}
+.color_greeny{
+  background-color: var(--color_greeny);
+}
+.color_granny{
+  background-color: var(--color_granny);
+}
+.color_gold{
+  background-color: var(--color_gold);
+}
+.color_yellow{
+  background-color: var(--color_yellow);
+}
+.color_orange{
+  background-color: var(--color_orange);
+}
+.color_red{
+  background-color: var(--color_red);
+}
+.color_wine{
+  background-color: var(--color_wine);
+}
+
 
 
