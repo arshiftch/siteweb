@@ -122,7 +122,7 @@ main{
 	max-width: 100%;
 	grid-template-columns:
 	[full-start] minmax(1em, 1fr)
-	[main-start] minmax(0, 50em) [main-end]
+	[main-start] minmax(0, 55em) [main-end]
 	minmax(1em, 1fr) [full-end];
   }
   .container>*{
