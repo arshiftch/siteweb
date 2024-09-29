@@ -1,48 +1,30 @@
 :root {
-  --black: color(display-p3 0.138 0.18 0.011);
-  --white: color(display-p3 0.966 0.967 0.969);
-  --color_white:  #E0E4ED;
-  --color_white:  color(display-p3 0.881 0.894 0.926);  
-  --color_dust:   #F7E6B2; 
-  --color_dust:   color(display-p3 1 0.912 0.609);   
-  --color_desert: #F7E18A; 
-  --color_desert: color(display-p3 1 0.9 0.463);   
-  --color_fall:   #F2D378; 
-  --color_fall:   color(display-p3 1 0.867 0.44);   
-  --color_kaki:   #605736; 
-  --color_kaki:   color(display-p3 0.348 0.314 0.177);   
-  --color_golf:   #2F3E04; 
-  --color_golf:   color(display-p3 0.264 0.349 0.01);   
-  --color_green:  #486206; 
-  --color_green:  color(display-p3 0.371 0.517 0.009);   
-  --color_greeny: #597E0E; 
-  --color_greeny: color(display-p3 0.401 0.594 0.007);   
-  --color_granny: #95944A; 
-  --color_granny: color(display-p3 0.637 0.631 0.127);   
-  --color_gold:   #C5AC10; 
-  --color_gold:   color(display-p3 1 0.851 0);   
-  --color_yellow: #F5D717; 
-  --color_yellow: color(display-p3 1 0.854 0);   
-  --color_orange: #E85E2F; 
-  --color_orange: color(display-p3 1 0.267 0);   
-  --color_red:    #EC201B; 
-  --color_red:    color(display-p3 1 0.078 0);   
-  --color_wine:   #C4060C; 
-  --color_wine:   color(display-p3 0.784 0.047 0);   
+  --black: rgb(26, 26, 26);
+  --black: color(display-p3 0.102 0.102 0.102);
+  --white: rgb(244, 235, 213);
+  --white: color(display-p3 0.949 0.922 0.843);
+  --aube: rgb(223,163,109);
+  --aube: color(display-p3 1 0.692 0.386);
+  --verdure: rgb(172,184,132);
+  --verdure: color(display-p3 0.758 0.813 0.541);
+  --sable: rgb(255,208,123);
+  --sable: color(display-p3 1 0.819 0.46);
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
-    --white:  color(display-p3 0.138 0.18 0.011);
-    --black:  color(display-p3 0.966 0.967 0.969);
+    --white: rgb(26, 26, 26);
+    --white: color(display-p3 0.102 0.102 0.102);
+    --black: rgb(244, 235, 213);
+    --black: color(display-p3 0.949 0.922 0.843);
+    --aube: rgb(203, 95, 0);
+    --aube: color(display-p3 0.798 0.398 0);
+    --verdure: rgb(130, 155, 48);
+    --verdure: color(display-p3 0.405 0.485 0.089);
+    --sable: rgb(237, 177, 68);
+    --sable: color(display-p3 0.996 0.739 0.229);    
     }
-}
-/* 
-
-background: rgb(247,230,178);
-background: linear-gradient(90deg, rgba(247,230,178,1) 47%, rgba(96,87,54,1) 47%, rgba(96,87,54,1) 47%, rgba(47,62,4,1) 48%, rgba(47,62,4,1) 52%, rgba(72,98,6,1) 52%, rgba(89,126,14,1) 55%, rgba(72,98,6,1) 60%, rgba(197,172,16,1) 60%, rgba(197,172,16,1) 80%, rgba(245,215,23,1) 90%, rgba(232,94,47,1) 90%, rgba(232,94,47,1) 91%, rgba(196,6,12,1) 92%, rgba(236,32,27,1) 100%);
- */
-
+} */
 
 
 /* A11Y */
@@ -92,82 +74,35 @@ body{
 }
 
 /* homepage */
-
+section{
+  scroll-snap-align: center;
+  height: 92vh;
+  padding: 4vh;
+}
+section > *{
+  max-width: 20em;
+}
 #homepage{
-  background: linear-gradient(109deg, var(--color_fall), var(--color_kaki), var(--color_golf), var(--color_green), var(--color_greeny), var(--color_granny), var(--color_gold), var(--color_yellow), var(--color_orange), var(--color_red), var(--color_wine));
-  background-size: 1400% 1400%;
-  animation: shiftground 60s ease infinite;
+  height: 100vh;
+  width: 100%;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
 }
-
-@keyframes shiftground { 
-  0%{background-position:0% 27%}
-  50%{background-position:100% 74%}
-  100%{background-position:0% 27%}
-}
-
-main{
-  position: relative;
-  z-index: 80;
-  max-width: 50em;
-  margin: auto;
-}
-
-@supports (display: grid) and (not (-ms-ime-align: auto)) {
-	main{
-	 max-width: none;	
-	}
-  .container{
-	display: grid;
-	width: 100%;
-	max-width: 100%;
-	grid-template-columns:
-	[full-start] minmax(1em, 1fr)
-	[main-start] minmax(0, 55em) [main-end]
-	minmax(1em, 1fr) [full-end];
-  }
-  .container>*{
-	grid-column: main;
-  }
-  .container-main{
-	grid-column: main;
-  }
-  .container-full{
-	grid-column:full;
-  }
-}
-
 #home{
-  display: flex;
-  min-height: 500px;
-  height: -webkit-fill-available;
-  width: 100vw;
-  margin: 0 auto;
-  flex-direction: column-reverse;
-  justify-content: space-between;
-  opacity: 0.8;
-}  
-@media (min-width: 60em) {
-  #home{
-    height: 95vh;
-    align-items: flex-end;
-    flex-direction: row-reverse;
-  }
+  background-color: var(--sable);
 }
-
-
-#homepage #logo{
-  width: 40vw;
-  min-width: 300px;
-  max-width: 700px;
-  margin: 15px;
-  height: auto;
-  align-self: flex-end;
+#about{
+  background-color: var(--white);
 }
-#homepage .address{
-  margin: 15px;
+#services{
+  background-color: var(--verdure);
 }
-#homepage img{
-  max-width: 100%;
+#project{
+  background-color: var(--aube);
+}
+#contact{
+  background-color: var(--sable);
 }
 
 a{
@@ -201,14 +136,14 @@ h1, .h1, .h-huge {
   font-size: -webkit-calc(200% + 4vw);
   font-size: clamp(1.8em,calc(2em + 4vw),100px);
   line-height: 1.1em;
-  font-weight: normal;
+  font-weight: bold;
   margin-top: 0;
   margin-bottom: 0;
 }
 h2, .h2 {
   font-size: calc(1.2em + 1vw);
   font-size: clamp(1.3em,calc(1.2em + 1vw),60px);
-  font-weight: normal;
+  font-weight: bold;
   line-height: 1.3em;
   margin-top: 0;
   margin-bottom: 0.4em;
@@ -222,7 +157,7 @@ h2, .h2 {
 h3, .h3 {
   font-size: calc(0.9em + 1vw);
   font-size: -webkit-calc(90% + 1vw);
-  font-weight: normal;
+  font-weight: bold;
   line-height: 1.3em;
   margin-top: 0;
   margin-bottom: 0;
@@ -230,7 +165,7 @@ h3, .h3 {
 h4, .h4 {
   font-size: calc(0.8em + 1vw);
   font-size: -webkit-calc(80% + 1vw);
-  font-weight: normal;
+  font-weight: bold;
   line-height: 1.3em;
   margin-top: 0;
   margin-bottom: 0;
@@ -292,48 +227,6 @@ mark{
 .point{
   height:4em;
   width: 100%;
-}
-.color_white{
-  background-color: var(--color_white);
-}
-.color_dust{
-  background-color: var(--color_dust);
-}
-.color_desert{
-  background-color: var(--color_desert);
-}
-.color_fall{
-  background-color: var(--color_fall);
-}
-.color_kaki{
-  background-color: var(--color_kaki);
-}
-.color_golf{
-  background-color: var(--color_golf);
-}
-.color_green{
-  background-color: var(--color_green);
-}
-.color_greeny{
-  background-color: var(--color_greeny);
-}
-.color_granny{
-  background-color: var(--color_granny);
-}
-.color_gold{
-  background-color: var(--color_gold);
-}
-.color_yellow{
-  background-color: var(--color_yellow);
-}
-.color_orange{
-  background-color: var(--color_orange);
-}
-.color_red{
-  background-color: var(--color_red);
-}
-.color_wine{
-  background-color: var(--color_wine);
 }
 
 
