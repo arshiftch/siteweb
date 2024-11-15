@@ -4,7 +4,7 @@
   --white: rgb(244, 235, 213);
   --white: color(display-p3 0.949 0.922 0.843);
   --aube: rgb(223,163,109);
-  --aube: color(display-p3 1 0.692 0.386);
+  --aube: color(display-p3 0.904 0.647 0.391);
   --verdure: rgb(172,184,132);
   --verdure: color(display-p3 0.758 0.813 0.541);
   --sable: rgb(255,208,123);
@@ -80,6 +80,16 @@ body{
 #logo{
   width:30vw;
 }
+#home{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  gap: 1vw;
+}
+#home *{
+  margin-left: 16vw;
+}
 
 /* homepage */
 section{
@@ -98,19 +108,19 @@ section > *{
   scroll-snap-type: y mandatory;
   position:relative;
 }
-#home{
+#home, #home mark{
   background-color: var(--sable);
 }
-#about{
+#about, #about mark{
   background-color: var(--white);
 }
-#services{
+#services, #services mark{
   background-color: var(--verdure);
 }
-#project{
+#project, #project mark{
   background-color: var(--aube);
 }
-#contact{
+#contact, #contact mark{
   background-color: var(--sable);
 }
 
@@ -134,6 +144,75 @@ a.button{
 a.button:hover{
   /* background-color: var(--apple2);
   color: var(--blue); */
+}
+
+summary::-webkit-details-marker {
+  display: none;
+} 
+summary::marker {
+  content: "";
+}
+
+#project > *{
+  max-width: 100%;
+}
+.detail-group{
+  margin: 3vh 0;
+  /* transform-origin: 50% 50%;
+  transform: rotate(210deg) skewX(-30deg) scaleY(0.864); */
+}
+details{
+  /* border: 1px solid black; */
+  margin-bottom: 2vh;
+  width: 100%;
+  background-color: #00000033;
+  cursor: pointer;
+}
+summary{
+  padding: 0.6em 0.6em;
+  font-size: clamp(1.3em,calc(1.2em + 1vw),30px);
+  font-weight: bold;
+}
+
+.gallery{
+  height: 40vh;
+  width: 100%;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+}
+.gallery_slider{
+  height: 40vh;
+  width: calc(40vh * 7);
+  display: flex;
+  flex-flow: row nowrap;
+}
+.gallery_slider img{
+  scroll-snap-align: start;
+  width: auto;
+}
+
+@supports selector(details::details-content) and (interpolate-size: allow-keywords) {
+  :root {
+    interpolate-size: allow-keywords;
+  }
+  
+  details {
+    transition: all 0.3s ease-out;
+    
+    &[open] {     
+      padding-bottom: 2rem;
+      height: min-content;
+    }
+    
+    & p {
+      margin-bottom: 1rem;
+    }
+  }
+  
+  details::details-content {
+    transition: content-visibility 0.3s allow-discrete ease-out;
+  }
 }
 
 
@@ -215,7 +294,7 @@ input, textarea, keygen, select, button{
 }
 
 mark{
-  background-color: var(--color_yellow);
+  background-color: var(--sable);
 }
 
 
@@ -238,7 +317,7 @@ mark{
 .face {
   transform-origin: 0 0;
   position: absolute;
-  border: 1px solid black;
+  border: 2px solid #000000;
   width:10vw;
   height: 10vw;
   /* height: 100px;
@@ -251,12 +330,15 @@ mark{
   width: 100px; */
 }
 .top {
+  background-color: #00000011;
   transform: rotate(210deg) skewX(-30deg) scaleY(0.864);
  }
 .left {
+  background-color: #00000022;
   transform: rotate(90deg) skewX(-30deg) scaleY(0.864);
 }
 .right {
+  background-color: #00000033;
   transform: rotate(-30deg) skewX(-30deg) scaleY(0.864);
  }
 #sachi_left .top {
