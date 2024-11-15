@@ -3,12 +3,20 @@
   --black: color(display-p3 0.102 0.102 0.102);
   --white: rgb(244, 235, 213);
   --white: color(display-p3 0.949 0.922 0.843);
+  --white-alpha: rgba(251, 234, 193, 0.6);
+  --white-alpha: color(display-p3 0.949 0.897 0.745 / 0.6);
   --aube: rgb(223,163,109);
   --aube: color(display-p3 0.904 0.647 0.391);
+  --aube-alpha: rgba(210, 127, 52, 0.6);
+  --aube-alpha: color(display-p3 0.927 0.566 0.207 / 0.602);
   --verdure: rgb(172,184,132);
   --verdure: color(display-p3 0.758 0.813 0.541);
+  --verdure-alpha: rgba(163, 179, 109, 0.6);
+  --verdure-alpha: color(display-p3 0.801 0.883 0.476 / 0.6);
   --sable: rgb(255,208,123);
-  --sable: color(display-p3 1 0.819 0.46);
+  --sable: color(display-p3 0.844 0.674 0.332);
+  --sable-alpha: rgba(241, 180, 71, 0.604);
+  --sable-alpha: color(display-p3 0.936 0.68 0.171 / 0.595);
   --marginLeft: 0px;
   --marginRight: 0px;
   --marginTop: 0px;
@@ -81,11 +89,7 @@ body{
   width:30vw;
 }
 #home{
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  align-items: flex-start;
-  gap: 1vw;
+  
 }
 #home *{
   margin-left: 16vw;
@@ -96,6 +100,11 @@ section{
   scroll-snap-align: center;
   height: 92vh;
   padding: 4vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  gap: 1vw;
 }
 section > *{
   max-width: 20em;
@@ -108,21 +117,23 @@ section > *{
   scroll-snap-type: y mandatory;
   position:relative;
 }
-#home, #home mark{
-  background-color: var(--sable);
+#home{
+  background-color: var(--sable-alpha);
 }
-#about, #about mark{
-  background-color: var(--white);
+#about{
+  background-color: var(--white-alpha);
 }
-#services, #services mark{
-  background-color: var(--verdure);
+#services{
+  background-color: var(--verdure-alpha);
 }
-#project, #project mark{
-  background-color: var(--aube);
+#project{
+  background-color: var(--aube-alpha);
 }
-#contact, #contact mark{
-  background-color: var(--sable);
+#contact{
+  background-color: var(--sable-alpha);
+  background: linear-gradient(-160deg,var(--sable-alpha) 0%, var(--sable-alpha) 65%, var(--sable) 65%, var(--sable) 100%);
 }
+
 
 a{
   color: var(--color_greeny);
@@ -165,11 +176,12 @@ details{
   /* border: 1px solid black; */
   margin-bottom: 2vh;
   width: 100%;
-  background-color: #00000033;
+  /* background-color: var(--aube); */
+  border-bottom: 1px solid var(--aube);
   cursor: pointer;
 }
 summary{
-  padding: 0.6em 0.6em;
+  padding: 0.6em 0em;
   font-size: clamp(1.3em,calc(1.2em + 1vw),30px);
   font-weight: bold;
 }
@@ -317,6 +329,7 @@ mark{
 .face {
   transform-origin: 0 0;
   position: absolute;
+  z-index:-1;
   border: 2px solid #000000;
   width:10vw;
   height: 10vw;
@@ -375,15 +388,7 @@ mark{
     display: block;
   }
 }
-.color-points{
-  display: flex;
-  width: 100%;
-  margin:1em 0;
-}
-.point{
-  height:4em;
-  width: 100%;
-}
+
 
 
 
