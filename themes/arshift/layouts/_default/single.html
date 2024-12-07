@@ -1,5 +1,79 @@
 {{ define "main" }}
-		<article>
-			{{ .Content }}
+		<article class="project_detail">
+			<div class="project_detail_slider">
+				<section class="content_text">
+					<div class="container container_title">
+						{{ if .Params.project_name }}
+							<h2>{{ .Params.project_name }}</h2>
+						{{ end }}
+						<h1>{{ .Title }}</h1>						
+						<h4>
+						{{ if .Params.start_year }}
+							{{ .Params.start_year }} -
+						{{ end }}
+						{{ if .Params.end_year }}
+							{{ .Params.end_year }}
+						{{ end }}
+						</h4>
+					</div>
+					
+
+				</section>
+				{{ if .Params.banner }}
+				<section class="content_image">	
+					  <img src="{{ .Params.banner | relURL }}" alt="{{ .Title }}"/>
+				</section>
+				{{ end }}
+				<section class="content_text">
+					<div class="container">
+						{{ .Content }}
+					</div>
+				</section>
+				{{ if .Params.images }}
+					{{ with .Params.images }}{{ range first 10 . }}
+					<section class="content_image">
+					  <img src="{{ . | relURL }}" loading="lazy" />
+					 </section>
+				    {{ end }}{{ end }}
+				{{ end }}
+				<section class="content_text">
+					<div class="container container_credit">
+						<h3>Crédits</h3>
+						
+						<p>
+						{{ if .Params.address }}
+							<strong>Adresse</strong> {{ .Params.address }}<br/>
+						{{ end }}
+						
+						{{ if .Params.project_type }}
+							<strong>Type de projet</strong> {{ .Params.project_type }}<br/>
+						{{ end }}
+						{{ if .Params.client }}
+							<strong>Client / Propriétaires</strong> {{ .Params.client }}<br/>
+						{{ end }}
+						
+						{{ if .Params.company }}
+							<strong>Entreprise totale</strong> {{ .Params.company }}<br/>
+						{{ end }}
+						
+						{{ if .Params.credit_architect_advisor }}
+							<strong>Architectes Conseils</strong> {{ .Params.credit_architect_advisor }}<br/>
+						{{ end }}
+						
+						{{ if .Params.credit_ingeneer_carpenter }}
+							<strong>Ingénieur charpentier</strong> {{ .Params.credit_ingeneer_carpenter }}<br/>
+						{{ end }}
+						
+						{{ if .Params.credit_photographer }}
+							<strong>Photographe</strong> {{ .Params.credit_photographer }}<br/>
+						{{ end }}
+						</p>
+					</div>
+				</section>
+
+			</div>
+		  
+		  
+			
 		</article>
 {{ end }}
