@@ -17,11 +17,11 @@
   --sable: color(display-p3 0.844 0.674 0.332);
   --sable-alpha: rgba(241, 180, 71, 0.604);
   --sable-alpha: color(display-p3 0.846 0.628 0.19 / 0.6);
-  --marginLeft: 0px;
-  --marginRight: 0px;
-  --marginTop: 0px;
+  --marginLeft: 51.2;
+  --marginRight: 68.8;
+  --marginTop: 40;
 }
-
+ 
 @media (prefers-color-scheme: dark) {
   :root {
   --white: rgb(26, 26, 26);
@@ -43,7 +43,7 @@
   --sable-alpha: rgba(241, 180, 71, 0.604);
   --sable-alpha: color(display-p3 0.846 0.628 0.19 / 0.6);
     }
-}
+} 
 
 
 /* A11Y */
@@ -100,10 +100,28 @@ body{
 #home{
   
 }
-#home *, #contact > *{
+#home > *, #contact > *{
   margin-left: 16vw;
 }
 
+/* NAV */
+nav{
+
+}
+nav ul{ 
+  padding:0;
+  margin: 0;
+  margin-left: -0.3em;
+  display: flex;
+}
+nav ul li{
+  list-style-type: none;
+  padding:0;
+  margin: 0;
+}
+nav ul li a{
+  padding: 0.4em 0.3em;
+}
 /* homepage */
 section{
   scroll-snap-align: center;
@@ -124,6 +142,7 @@ section > *{
   overflow-x: hidden;
   overflow-y: scroll;
   scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
   position:relative;
 }
 #home{
@@ -237,6 +256,49 @@ summary{
 }
 
 
+/* Project listing */
+.project_list{
+  display: flex;  
+  gap: 1vw;
+  margin-top: 1vw;
+}
+.project_list a{
+  width: 20vmax;
+  height:28vmax;
+  display: flex; 
+  flex-direction: column;
+  text-decoration: none; 
+  justify-content: space-between;
+  /* border: 1px solid var(--black); */
+  /* background-color: var(--white); */
+  background-color: var(--white);
+}
+.project_list a > *{
+    transition-duration: 0.3s;
+    transition-timing-function: ease-in-out;
+    transition-property: filter, height;
+}
+.project_list a img{
+  width: 20vmax;
+  height:20vmax;
+  object-fit: cover;
+  filter: sepia(100%) grayscale(50%);
+  order: 0;
+}
+.project_list a:hover img{
+  filter: none;
+  height: 20.4vmax;
+}
+.project_list a h2{
+  display: block;
+  order: 2;
+  font-size: 90%;
+  padding: 0.6em 0.8em ;
+  align-self: end;
+  text-align: left;
+}
+
+
 /* Typography */
 h1, h2, h3, h4, h5{
   word-wrap: break-word;
@@ -328,56 +390,89 @@ mark{
 #sachi_left{
   will-change: margin;
   margin-left: calc(var(--marginRight)*1vw);
-  margin-top: calc(var(--marginTop)*1vw);
+  margin-top: calc(var(--marginTop)*1vh);
 }
 #sachi_right{
   will-change: margin;
-  /* margin-left: 60vw; */
   margin-left:calc(var(--marginLeft)*1vw);
-  margin-top: calc(var(--marginTop)*1vw);
+  margin-top: calc(var(--marginTop)*1vh);
 }
 
-.face {
+.face, .teton, .etalon {
   transform-origin: 0 0;
   position: absolute;
-  transform: translateZ(0);
-  z-index:-1;
+  /* transform: translateZ(0); */
+  z-index: -1;
   border: 2px solid var(--black);
-  width:10vw;
+  width: 10vw;
   height: 10vw;
   /* height: 100px;
   width: 100px; */
 }
 .sachi .face {
-  width:10vw;
+  width: 10vw;
   height: 10vw;
   /* height: 100px;
   width: 100px; */
 }
+.teton{
+  /* background-color: #ff000055; */
+  width: 3vw;
+  height: 3vw;
+}
+.etalon{
+  background-color: #00ff0055;
+  width: 1vw;
+  height: 1vw;
+}
+
+
+
 .top {
-  /* background-color: #ffffff11; */
   transform: rotate(210deg) skewX(-30deg) scaleY(0.864);
  }
 .left {
-  /* background-color: #ffffff22; */
   transform: rotate(90deg) skewX(-30deg) scaleY(0.864);
 }
 .right {
-  /* background-color: #ffffff33; */
   transform: rotate(-30deg) skewX(-30deg) scaleY(0.864);
  }
-#sachi_left .top {
+#sachi_left .face.top {
   width: 10vw;
   height: 100vw;
 }
-#sachi_left .right {
+#sachi_left .face.right {
   width: 100vw;
 }
-#sachi_right .top {
+#sachi_right .face.top {
   width: 100vw;
 }
-#sachi_right .left {
+#sachi_right .face.left {
   height: 100vw;
+}
+
+#sachi_left .teton.left {
+  transform: rotate(90deg) skewX(-30deg) scaleY(0.864) translateX(5vw) translateY(5vw);
+}
+#sachi_left .teton.top {
+  transform: rotate(210deg) skewX(-30deg) scaleY(0.864) translateX(0vw) translateY(-5vw);
+  height: 2.5vw;
+}
+#sachi_left .teton.right {
+  transform: rotate(-30deg) skewX(-30deg) scaleY(0.864) translateX(-5vw) translateY(0);
+  width: 2.5vw;
+}
+
+#sachi_right .teton.left {
+  transform: rotate(90deg) skewX(-30deg) scaleY(0.864) translateX(0vw) translateY(-5vw);
+  height: 2.5vw;
+}
+#sachi_right .teton.top {
+  transform: rotate(210deg) skewX(-30deg) scaleY(0.864) translateX(-5vw) translateY(0vw);
+  width: 2.5vw;
+}
+#sachi_right .teton.right{
+  transform: rotate(-30deg) skewX(-30deg) scaleY(0.864) translateX(5vw) translateY(5vw);
 }
 .tenon{
   margin-top: 0vh;

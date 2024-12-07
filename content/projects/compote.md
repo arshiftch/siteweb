@@ -1,9 +1,10 @@
 +++
 project_name = "POL | La Compôte"
-title = "POL Réhabilitation d’une grange à La Compôte-en-Bauges"
+title = "Réhabilitation d’une grange à La Compôte-en-Bauges"
 date = 2024-12-07T11:17:52+01:00
 start_year = '2022'
 end_year = '2024'
+banner = "/images/2024_compote_01.jpg"
 images = ["/images/2024_compote_01.jpg","/images/2024_compote_02.jpg","/images/2024_compote_03.jpg","/images/2024_compote_04.jpg","/images/2024_compote_05.jpg","/images/2024_compote_06.jpg","/images/2024_compote_07.jpg"]
 address = "Chef Lieu Nord, FR-73630 La Compôte"
 project_type = "Réhabilitation d’une Grange en logement"

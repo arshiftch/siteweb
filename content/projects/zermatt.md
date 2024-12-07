@@ -1,9 +1,10 @@
 +++
 project_name = "ZER | Zermatt"
-title = "ZER | Rénovation totale d’une cuisine "
+title = "Rénovation totale d’une cuisine "
 date = 2024-12-07T11:22:11+01:00
 start_year = '2021'
 end_year = '2022'
+banner = "/images/2022_zermatt_01.jpg"
 images = ["/images/2022_zermatt_01.jpg","/images/2022_zermatt_02.jpg","/images/2022_zermatt_03.jpg","/images/2022_zermatt_04.jpg","/images/2022_zermatt_05.jpg","/images/2022_zermatt_06.jpg","/images/2022_zermatt_07.jpg","/images/2022_zermatt_08.jpg","/images/2022_zermatt_09.jpg"]
 address = "Chalet Montana, Petit Village, 3920 Zermatt"
 project_type = "Rénovation d’une cuisine en bois massif"
