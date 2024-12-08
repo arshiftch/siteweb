@@ -333,9 +333,15 @@ a.button:hover{
   gap: 1vw;
   margin-top: 1vw;
   z-index:99;
+  flex-direction: column;
+  @media (min-width: 60em) {
+    flex-direction: row;
+  }
 }
 .project_list a{
-  width: 20vmax;
+  @media (min-width: 60em) {
+    width: 25vmax;
+  }
   height:28vmax;
   display: flex; 
   text-decoration: none; 
@@ -344,6 +350,7 @@ a.button:hover{
   /* background-color: var(--white); */
   background-color: var(--white);
   flex-direction: column;
+  
 }
 
 
@@ -353,7 +360,9 @@ a.button:hover{
     transition-property: filter, height;
 }
 .project_list a img{
-  width: 20vmax;
+  @media (min-width: 60em) {
+    width: 25vmax;
+  }
   height:20vmax;
   object-fit: cover;
   filter: sepia(100%) grayscale(50%);
