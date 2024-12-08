@@ -144,7 +144,7 @@ nav ul li a{
 /* homepage */
 #homepage section{
   @media (max-width: 60em) {
-    scroll-snap-align: end;
+    scroll-snap-align: start;
     height: 86vh;
   }
   height: 92vh;
