@@ -98,10 +98,11 @@ body{
 #logo{
   width:45vw;
   fill: var(--black);
-  
+  position: absolute;
+  bottom: 2vmax;
 }
-#home{
-  
+#homepage section#home{
+  position: relative;
 }
 #contact > *{
   margin-left: 16vw;
@@ -145,7 +146,7 @@ nav ul li a{
 #homepage section{
   @media (max-width: 60em) {
     scroll-snap-align: start;
-    height: 86vh;
+    height: 80vh;
   }
   height: 92vh;
   padding: 4vh;
