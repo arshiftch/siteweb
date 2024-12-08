@@ -9,6 +9,9 @@ theme = "arshift"
 	[markup.goldmark.renderer]
 	  unsafe = true
 
+[params]
+	homepage = "ARShift"      
+
 [menu]
 
   [[menu.main]]

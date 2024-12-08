@@ -1,0 +1,17 @@
+<div class="project_list">
+  {{ range .Site.Sections }}
+	{{ range first 6 .Data.Pages }}
+	<a href="{{.Permalink}}">
+	  <h2>
+		{{.Title}}
+	  </h2>
+	  {{ if .Params.banner }}
+		  <img srcset="{{ .Params.banner | relURL }} 480w"
+	   sizes="(max-width: 800px) 200px,
+		  400px" src="{{ .Params.banner | relURL }}" alt="{{ .Title }}" class="detail-article-banner" />
+	  {{ end }}
+	</a>
+
+	{{ end }}
+  {{ end }}
+  </div>

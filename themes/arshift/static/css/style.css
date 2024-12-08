@@ -84,6 +84,7 @@ html{
   scroll-behavior: smooth;
 }
 body{
+  scroll-behavior: smooth;
   background-color: var(--white);
   color: var(--black);
   font-family: 'avenir next', avenir, 'helvetica neue', -apple-system,ubuntu,roboto,noto,segoe ui,arial,sans-serif;
@@ -105,6 +106,14 @@ body{
 }
 
 /* NAV */
+nav.sticky{
+  position: fixed;
+  top: 2vmax;
+  left: 2vmax;
+}
+nav.sticky a{
+  text-decoration: none;
+}
 nav{
 
 }
@@ -191,6 +200,7 @@ a.button:hover{
   overflow-x: hidden;
   overflow-y: scroll;
   scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
   @media (min-width: 60em) {
     overflow-x: scroll;
     overflow-y: hidden;
@@ -204,7 +214,7 @@ a.button:hover{
   @media (min-width: 60em) {
     height: 100vh;
     flex-flow: row nowrap;
-    width:calc(6 * 100vw);
+    width:calc(7 * 100vw);
   }
 }
 .project_detail_slider section{
@@ -217,6 +227,7 @@ a.button:hover{
   @media (min-width: 60em) {
     flex-direction: column;
     width: 50vw;  
+    /* border-left: 3px solid var(--black); */
   }
 }
 .project_detail_slider section.content_text h1{
@@ -224,7 +235,7 @@ a.button:hover{
   margin-bottom: 3em;
 }
 .project_detail_slider section.content_text .container{
-  margin: 2em;
+  margin: 6vmax 2vmax 2vmax;
 }
 .project_detail_slider section.content_text .container_title{
   display: flex;
@@ -245,10 +256,39 @@ a.button:hover{
 .project_detail_slider section.content_image{
   
 }
+.project_detail_slider section.content_image .banner{
+  position: relative;
+}
+.project_detail_slider section.content_image .banner h1{
+  position: absolute;
+  bottom: 2vmax;
+  right: 3vmax;
+  animation: fadeIn 1.6s infinite alternate;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0.6;
+  }
+}
+.project_detail_slider section.content_image a{
+  display: block;
+  width: 100%;
+  height: 100%;
+}
 .project_detail_slider section.content_image img{
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+.project_detail_slider section.more_project{
+  background-color: var(--black);
+}
+.project_detail_slider section.more_project .project_list{
+  height: 100%;
+  gap: 2vmax;
+  margin: 2vmax;
+  align-items: flex-end;
+  justify-content: flex-end;
 }
 
 
@@ -484,6 +524,38 @@ mark{
   width: 490vh;
 }
 
+
+.socials{ 
+  margin: 0; 
+  padding: 0;
+  display: flex;
+  gap: 1vmax;
+}
+.socials li{
+  margin: 0; padding: 0;
+  list-style: none;
+  display: inline-block;
+}
+a.icon {
+  background-color: var(--sable-alpha);
+  border-radius: 1vmax;
+}
+a.icon svg{
+  fill: var(--black);
+}
+a.icon, a.icon svg{
+  display: block;
+  height: 5vmax;
+  width: 5vmax;
+}
+a.icon:hover svg{
+  fill: var(--black);
+}
+a.icon:hover{
+  background-color: var(--sable-alpha);
+  transform: scale(1.1);
+  transition: background-color 0.2s, transform 0.2s ease-in-out;
+}
 
 /* Utilities */
 .hide-mobile{

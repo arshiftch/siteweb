@@ -1,5 +1,14 @@
 {{ define "main" }}
-		<article class="project_detail">
+		<nav class="sticky">
+			<ul>
+				<li>
+					<a href="{{.Page.Site.BaseURL}}">
+						&#9204 {{ .Page.Site.Params.homepage }}
+					  </a>
+				</li>
+			</ul>
+		</nav>
+		<article class="project_detail" id="project">
 			<div class="project_detail_slider">
 				<section class="content_text">
 					<div class="container container_title">
@@ -21,12 +30,19 @@
 				</section>
 				{{ if .Params.banner }}
 				<section class="content_image">	
-					  <img src="{{ .Params.banner | relURL }}" alt="{{ .Title }}"/>
+					  <a href="#next_slide" class="banner">
+						  <h1>&#9205;</h1>
+						  <img src="{{ .Params.banner | relURL }}" alt="{{ .Title }}"/>
+					  </a>
 				</section>
 				{{ end }}
-				<section class="content_text">
-					<div class="container">
+				<section class="content_text" id="next_slide">
+					<div class="container container_title">
+						<h3>{{ .Title }}</h3>	
 						{{ .Content }}
+						<p>
+							<a href="#credits">Crédits</a>
+						</p>
 					</div>
 				</section>
 				{{ if .Params.images }}
@@ -36,7 +52,7 @@
 					 </section>
 				    {{ end }}{{ end }}
 				{{ end }}
-				<section class="content_text">
+				<section class="content_text" id="credits">
 					<div class="container container_credit">
 						<h3>Crédits</h3>
 						
@@ -69,6 +85,9 @@
 						{{ end }}
 						</p>
 					</div>
+				</section>
+				<section class="more_project content_text">
+					{{ partial "projects.html" . }}
 				</section>
 
 			</div>
