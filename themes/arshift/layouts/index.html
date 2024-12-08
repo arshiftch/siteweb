@@ -1,15 +1,15 @@
 {{ define "main" }}
 <div id="homepage">
   
-  <div id="output" style="position:fixed;top:10px;right:10px;border:3px solid green;"></div>
+  <!-- <div id="output" style="position:fixed;top:10px;right:10px;border:3px solid green;"></div> -->
   
   
   <section id="home">
   {{ partial "logo.html" . }}
   
-  <h2 style="font-weight: normal;margin-bottom:0;">Sustainable building</h2>
+  <!-- <h2 style="font-weight: normal;margin-bottom:0;">Sustainable building</h2> -->
   
-  <nav>
+  <nav class="sticky-home">
     <ul>
       <li>
         <a href="#about">À&nbsp;propos</a>
@@ -44,9 +44,9 @@
   <section id="contact">  
   
 
-  <h2>ARshift Sàrl</h2>
+  <h2 style="margin-bottom: 0;padding-bottom: 0;line-height: 1;">ARshift Sàrl</h2>
     
-  <p>Av. du Rond-Point 7<br/>
+  <p style="padding-top: 0;margin-top:0;margin-bottom:2vmax;">Av. du Rond-Point 7<br/>
   CH — 1006 Lausanne<br/>
   <a href="mailto:info@ARshift.ch">info@ARshift.ch</a></p>
   
@@ -93,11 +93,14 @@
     
     var scollingVh = 0;
     var marginRight = 0;
-    var slideSpeed = 0.6;
-    const marginLeftMax = 51.2;
-    const marginRightMax = 68.8;
+    var slideSpeedLeft = 0.4;
+    var slideSpeedRight = 0.8;
+    // const marginLeftMax = 60;
+    // const marginRightMax = 60;
+    const marginLeftMax = 200;
+    const marginRightMax = 0;
     // const marginTopMax = 260;
-    const marginTopMax = 491;
+    const marginTopMax = 340;
     // const scenario[
     //   step[
     //     
@@ -109,18 +112,18 @@
       
       scollingVh = (container.scrollTop/window.innerHeight)*100;
       
-      if(scollingVh*slideSpeed<=marginLeftMax){
-        document.documentElement.style.setProperty("--marginLeft", scollingVh*slideSpeed);  
+      if(scollingVh*slideSpeedLeft+30<=marginLeftMax){
+        document.documentElement.style.setProperty("--marginLeft", scollingVh*slideSpeedLeft+30);  
       }else{
         document.documentElement.style.setProperty("--marginLeft", marginLeftMax);    
       }
-      if(scollingVh*1.16<=marginTopMax){
-        document.documentElement.style.setProperty("--marginTop", scollingVh*1.16);  
+      if(scollingVh*1.16+30<=marginTopMax){
+        document.documentElement.style.setProperty("--marginTop", scollingVh*1.16+30);  
       }else{
         document.documentElement.style.setProperty("--marginTop", marginTopMax);    
       }
       
-      marginRight = 120+(container.scrollTop/window.innerHeight)*100*-slideSpeed;
+      marginRight = 220+(container.scrollTop/window.innerHeight)*100*-slideSpeedRight;
       if(marginRight>=marginRightMax){
         document.documentElement.style.setProperty("--marginRight", marginRight);  
       }else{
@@ -129,7 +132,7 @@
   
       // debug
         //output.textContent = `scrollTop: ${container.scrollTop/window.innerHeight*100}vX`;
-        output.textContent = `scrollTop: ${parseInt(scollingVh)}`;
+        output.textContent = `Celle de gauche: ${parseInt(scollingVh*slideSpeedLeft+40)}`;
       // console.log(container.scrollTop);
     });
   </script>
