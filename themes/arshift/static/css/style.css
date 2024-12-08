@@ -145,6 +145,7 @@ nav ul li a{
 #homepage section{
   @media (max-width: 60em) {
     scroll-snap-align: end;
+    height: 86vh;
   }
   height: 92vh;
   padding: 4vh;
