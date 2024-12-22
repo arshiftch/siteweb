@@ -21,7 +21,7 @@
   --marginRight: -100;
   --marginTop: 30;
 }
- 
+ /* 
 @media (prefers-color-scheme: dark) {
   :root {
   --white: rgb(26, 26, 26);
@@ -43,7 +43,7 @@
   --sable-alpha: rgba(241, 180, 71, 0.604);
   --sable-alpha: color(display-p3 0.846 0.628 0.19 / 0.6);
     }
-} 
+}  */
 
 
 /* A11Y */
@@ -169,7 +169,8 @@ nav ul li a{
   position:relative;
 }
 #home{
-  background-color: var(--sable-alpha);
+  background-color: var(--white);
+  /* background-color: var(--sable-alpha); */
 }
 #about{
   background-color: var(--verdure-alpha);
