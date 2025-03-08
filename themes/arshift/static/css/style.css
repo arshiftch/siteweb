@@ -2,7 +2,7 @@
   --black: rgb(26, 26, 26);
   --black: color(display-p3 0.102 0.102 0.102);
   --white: rgb(244, 235, 213);
-  --white: color(display-p3 0.949 0.922 0.843);
+  --white: color(display-p3 1 0.991 0.966);
   --white-alpha: rgba(251, 234, 193, 0.6);
   --white-alpha: color(display-p3 0.949 0.897 0.745 / 0.853);
   --aube: rgb(223,163,109);
@@ -143,7 +143,7 @@ nav ul li a{
 }
 /* homepage */
 #homepage section{
-  /* scroll-snap-align: center; */
+  scroll-snap-align: center;
   height: 92vh;
   padding: 4vh;
   display: flex;
@@ -165,19 +165,19 @@ nav ul li a{
   position:relative;
 }
 #home{
-  background-color: var(--sable-alpha);
+  /* background-color: var(--sable-alpha); */
 }
 #about{
-  background-color: var(--verdure-alpha);
+  /* background-color: var(--verdure-alpha); */
 }
 #services{
-  background-color: var(--aube-alpha);
+  /* background-color: var(--aube-alpha); */
 }
 #project{
-  background-color: var(--white-alpha);
+  /* background-color: var(--white-alpha); */
 }
 #contact{
-  background-color: var(--sable-alpha);
+  /* background-color: var(--sable-alpha); */
   /* background: linear-gradient(-160deg,var(--sable-alpha) 0%, var(--sable-alpha) 65%, var(--sable) 65%, var(--sable) 100%); */
 }
 

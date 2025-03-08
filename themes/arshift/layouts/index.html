@@ -54,88 +54,10 @@
   
   </section>
   
-  <div class="construction">
-    <div class="tenon">
-      <span class="face left"></span>
-      <span class="face right"></span>  
-    </div>
-    <div class="sachi" id="sachi_left">
-      <!-- <span class="etalon top"></span>
-      <span class="etalon left"></span>
-      <span class="etalon right"></span> -->
-      <span class="face top"></span>
-      <span class="face left"></span>
-      <span class="face right"></span>
-      <span class="teton_group">
-        <span class="teton top"></span>
-        <span class="teton left"></span>
-        <span class="teton right"></span>
-      </span>
-    </div>
-    <div class="sachi" id="sachi_right">
-      <span class="face top"></span>
-      <span class="face left"></span>
-      <span class="face right"></span>
-      <span class="teton_group">
-        <span class="teton top"></span>
-        <span class="teton left"></span>
-        <span class="teton right"></span>
-      </span>
-    </div>
-  </div>
+ 
   
   
-  <script>
-    const container = document.querySelector("#homepage");
-    
-    // debug
-    const output = document.querySelector("#output");
-    
-    var scollingVh = 0;
-    var marginRight = 0;
-    var slideSpeedLeft = 0.4;
-    var slideSpeedRight = 0.8;
-    // const marginLeftMax = 60;
-    // const marginRightMax = 60;
-    const marginLeftMax = 200;
-    const marginRightMax = 0;
-    // const marginTopMax = 260;
-    const marginTopMax = 340;
-    // const scenario[
-    //   step[
-    //     
-    //   ]
-    // ];
-    // 
-  
-    container.addEventListener("scroll", (event) => {
-      
-      scollingVh = (container.scrollTop/window.innerHeight)*100;
-      
-      if(scollingVh*slideSpeedLeft+30<=marginLeftMax){
-        document.documentElement.style.setProperty("--marginLeft", scollingVh*slideSpeedLeft+30);  
-      }else{
-        document.documentElement.style.setProperty("--marginLeft", marginLeftMax);    
-      }
-      if(scollingVh*1.16+30<=marginTopMax){
-        document.documentElement.style.setProperty("--marginTop", scollingVh*1.16+30);  
-      }else{
-        document.documentElement.style.setProperty("--marginTop", marginTopMax);    
-      }
-      
-      marginRight = 220+(container.scrollTop/window.innerHeight)*100*-slideSpeedRight;
-      if(marginRight>=marginRightMax){
-        document.documentElement.style.setProperty("--marginRight", marginRight);  
-      }else{
-        document.documentElement.style.setProperty("--marginRight", marginRightMax);    
-      }
-  
-      // debug
-        //output.textContent = `scrollTop: ${container.scrollTop/window.innerHeight*100}vX`;
-        output.textContent = `Celle de gauche: ${parseInt(scollingVh*slideSpeedLeft+40)}`;
-      // console.log(container.scrollTop);
-    });
-  </script>
+ 
   
   
   
