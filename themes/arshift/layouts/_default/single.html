@@ -1,10 +1,10 @@
 {{ define "main" }}
-		<nav class="sticky">
+		<nav class="sticky" data-aos="fade-right" data-aos-duration="800">
 			<ul>
-				<li>
+				<li class="glass">
 					<a href="{{.Page.Site.BaseURL}}">
 						&#9204 {{ .Page.Site.Params.homepage }}
-					  </a>
+					</a>
 				</li>
 			</ul>
 		</nav>
@@ -13,9 +13,9 @@
 				<section class="content_text">
 					<div class="container container_title">
 						{{ if .Params.project_name }}
-							<h2>{{ .Params.project_name }}</h2>
+							<h2 data-aos="fade-right" data-aos-duration="600">{{ .Params.project_name }}</h2>
 						{{ end }}
-						<h1>{{ .Title }}</h1>						
+						<h1 data-aos="fade-right" data-aos-duration="1000">{{ .Title }}</h1>						
 						<h4>
 						{{ if .Params.start_year }}
 							{{ .Params.start_year }} -
@@ -32,7 +32,15 @@
 				<section class="content_image">	
 					  <a href="#next_slide" class="banner">
 						  <h1>&#9205;</h1>
-						  <img src="{{ .Params.banner | relURL }}" alt="{{ .Title }}"/>
+						  {{ with .Resources.GetMatch .Params.banner }}
+							  {{ $processedImage := .Process "fill 1500x1500" }}
+							  {{ $webpImage := $processedImage.Resize "1500x1500 webp" }}
+							  <img 
+								  src="{{ $webpImage.RelPermalink }}" 
+								  alt="{{ .Title }}"
+								  loading="lazy"
+							  >
+						  {{ end }}
 					  </a>
 				</section>
 				{{ end }}
@@ -45,12 +53,49 @@
 						</p>
 					</div>
 				</section>
-				{{ if .Params.images }}
-					{{ with .Params.images }}{{ range first 10 . }}
-					<section class="content_image">
-					  <img src="{{ . | relURL }}" loading="lazy" />
-					 </section>
-				    {{ end }}{{ end }}
+{{ if .Params.images }}
+					{{ with .Params.images }}
+						{{ $imageCount := len . }}
+						{{ range $index, $image := first 10 . }}
+							{{ $matchedImage := $.Resources.GetMatch . }}
+							<section class="content_image">
+								{{ if $matchedImage }}
+									
+									{{ if lt $index (sub $imageCount 1) }}
+										<a href="#image-{{ add $index 2 }}">
+											<img 
+												id="image-{{ add $index 1 }}" 
+												src="{{ $matchedImage.RelPermalink }}" 
+												width="{{ $matchedImage.Width }}" 
+												height="{{ $matchedImage.Height }}" 
+												loading="lazy" 
+												alt="Project Image {{ add $index 1 }}"
+											/>
+										</a>
+									{{ else }}
+										<a href="#credits">
+											<img 
+												id="image-{{ add $index 1 }}" 
+												src="{{ $matchedImage.RelPermalink }}" 
+												width="{{ $matchedImage.Width }}" 
+												height="{{ $matchedImage.Height }}" 
+												loading="lazy" 
+												alt="Project Image {{ add $index 1 }}"
+											/>
+										</a>
+									{{ end }}
+								{{ else }}
+									<!-- Fallback if image not found in resources -->
+									<img 
+										id="image-{{ add $index 1 }}" 
+										src="{{ . | relURL }}" 
+										loading="lazy" 
+										alt="Project Image {{ add $index 1 }}"
+									/>
+								{{ end }}
+							</section>
+						{{ end }}
+					{{ end }}
 				{{ end }}
 				<section class="content_text" id="credits">
 					<div class="container container_credit">

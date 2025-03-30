@@ -9,6 +9,8 @@
 	<link rel="author" href="{{ "humans.txt" | relURL }}" />
 	<link rel="manifest" href="/manifest.json">
 	<link rel="stylesheet" href="{{ "css/style.css" | relURL }}?{{ time.Now }}">
+	<link href="{{ "css/aos.css" | relURL }}" rel="stylesheet">
+
 	<script>
 		document.documentElement.className = document.documentElement.className.replace("no-js","js");
 	</script>
@@ -29,6 +31,24 @@
 	</script>  
 </head>
 <body>
+
 		{{ block "main" . }}{{ end }}
+		<script src="{{ "/js/aos.js" | relURL }}"></script>	
+		<script>
+			  AOS.init();
+			  
+			  document.querySelectorAll('[loading="lazy"]').forEach(element => {
+				const animateIn = () => {
+				  element.style.opacity = 1;
+				};
+			  
+				if (element.complete) {
+				  animateIn();
+				} else {
+				  element.addEventListener('load', animateIn);
+				}
+			  });
+		</script>
+		
 </body>
 </html>
