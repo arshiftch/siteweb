@@ -1,6 +1,6 @@
 +++
 project_name = "Zermatt"
-title = "Rénovation totale d’une cuisine "
+title = "Rénovation totale d’une cuisine à Zermatt"
 date = 2024-12-07T11:22:11+01:00
 start_year = '2021'
 end_year = '2022'

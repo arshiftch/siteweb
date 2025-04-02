@@ -1,14 +1,15 @@
 :root {
   --black: rgb(26, 26, 26);
   --black: color(display-p3 0.102 0.102 0.102);
-  --blackblack: rgb(26, 26, 26);
-  --blackblack: color(display-p3 0.102 0.102 0.102);
+  --blackblack: rgb(244, 235, 213);
+  --blackblack: color(display-p3 1 0.991 0.966);
   --white: rgb(244, 235, 213);
   --white: color(display-p3 1 0.991 0.966);
   --white-alpha: rgba(251, 234, 193, 0.6);
   --white-alpha: color(display-p3 0.949 0.897 0.745 / 0.853);
   --aube: rgb(223,163,109);
   --aube: color(display-p3 0.904 0.647 0.391);
+  --vertgrisbrun: rgb(172, 155, 112);
   --aube-alpha: rgba(210, 127, 52, 0.6);
   --aube-alpha: color(display-p3 0.927 0.566 0.207 / 0.801);
   --verdure: rgb(172,184,132);
@@ -113,7 +114,7 @@ body{
 #logo{
   width:45vw;
   max-width: 600px;
-  /* min-width: 300px; */
+  min-width: 340px;
   fill: var(--blackblack);
   height: auto;
 }
@@ -128,7 +129,8 @@ body{
 
 .glass {
   inset: 0;
-  backdrop-filter: blur(18px);
+  backdrop-filter: blur(3px);
+  /* backdrop-filter: grayscale(200%); */
   color: var(--blackblack);
   /* mask-image: url(#frostyGlassMask); */
 }
@@ -143,6 +145,7 @@ nav.sticky{
 
 nav.sticky a{
   text-decoration: none;
+  color:  var(--black);
 }
 nav{
 
@@ -164,8 +167,10 @@ nav ul li a{
 }
 /* homepage */
 #homepage section{
+  
   scroll-snap-align: center;
   height: 92vh;
+  min-height: 500px;
   padding: 4vh;
   display: flex;
   flex-direction: column;
@@ -173,23 +178,29 @@ nav ul li a{
   align-items: flex-start;
   gap: 1vw;
 }
+.slide-text > *{
+  max-width: 40em;
+  /* hyphens: auto; */
+}
 #homepage section > *{
   /* max-width: 20em; */
 }
 #homepage{
   height: 100vh;
   width: 100%;
-  overflow-x: hidden;
-  overflow-y: scroll;
-  scroll-snap-type: y mandatory;
-  scroll-behavior: smooth;
-  position:relative;
+  @media (min-height: 600px) {
+    overflow-x: hidden;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+    position:relative;
+  }
 }
 #homepage #home{
   /* background-color: var(--sable-alpha); */
-  background-image: url('/images/arshift_sustainbuild_1.jpeg');
+  background-image: url('/images/arshift_sustainbuild_3.jpg');
+  background-position: 50% 100%;
   background-size: cover;
-  background-position: 50% 50%;
   height: 80vh;
 }
 .home-content{
@@ -202,15 +213,18 @@ nav ul li a{
   background-color: var(--white-alpha);
   height: 60vh;
 }
-#homepage #services{
-  /* background-color: var(--aube-alpha); */
-  background-image: url('/images/arshift_sustainbuild_3.jpeg');
+#homepage #entracte{
+  background-image: url('/images/arshift_sustainbuild_1.jpeg');
   background-position: 50% 50%;
   background-size: cover;
-  height: 90vh;
+  height: 80vh;  
+}
+#homepage #services{
+  background-color: var(--aube-alpha);
+  height: 60vh;
 }
 #homepage #project{
-  /* background-color: var(--white-alpha); */
+  background-color: var(--vertgrisbrun);
 }
 #homepage #contact{
   background-image: url('/images/arshift_sustainbuild_2.jpeg');
@@ -285,6 +299,7 @@ a.button:hover{
   margin-bottom: 3em;
 }
 .project_detail_slider section.content_text{
+  /* background-color: var(--vertgrisbrun); */
   @media (min-width: 60em) {
     width: 40vw;  
   }
@@ -409,9 +424,8 @@ a.button:hover{
   }
   /* height:20vmax; */
   object-fit: cover;
-  filter: sepia(100%) grayscale(50%);
-  /* filter: grayscale(100%); */
-  opacity: 0.8;
+  /* filter: sepia(100%); */
+  filter: grayscale(100%) opacity(70%) contrast(160%);
 }
 .project_list a:hover img{
   filter: none;
@@ -421,9 +435,10 @@ a.button:hover{
   flex-direction: column;
   justify-content: flex-end;
 }
-.project_list a h3{
+.project_list a h4{
   /* height:20vmax; */
   /* display: block; */
+  font-weight: normal;
   padding: 0.6em 0.8em ;
   /* align-self: end; */
   /* text-align: left; */
@@ -444,7 +459,7 @@ h1, .h1, .h-huge {
 }
 h2, .h2 {
   font-size: calc(1.2em + 1vw);
-  font-size: clamp(1.3em,calc(1.2em + 1vw),50px);
+  font-size: clamp(1.3em,calc(1.2em + 1vw),30px);
   font-weight: 600;
   line-height: 1.3em;
   margin-top: 0;
@@ -616,7 +631,7 @@ mark{
   display: inline-block;
 }
 a.icon {
-  background-color: var(--sable-alpha);
+  background-color: var(--white);
   border-radius: 0.5vmax;
 }
 a.icon svg{
@@ -631,7 +646,7 @@ a.icon:hover svg{
   fill: var(--black);
 }
 a.icon:hover{
-  background-color: var(--sable-alpha);
+  background-color: var(--white-alpha);
   transform: scale(1.1);
   transition: background-color 0.2s, transform 0.2s ease-in-out;
 }
