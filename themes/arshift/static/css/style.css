@@ -114,18 +114,18 @@ body{
 #logo{
   width:45vw;
   max-width: 600px;
-  min-width: 340px;
+  min-width: 320px;
   fill: var(--blackblack);
   height: auto;
 }
 
 
 .p1vmax{
-  padding: 1vmax;
+  padding: 0.5vmax;
 
 }
 .p2vmax{
-  padding: 2vmax;
+  padding: 1vmax;
 }
 
 .glass {
@@ -168,19 +168,21 @@ nav ul li a{
 }
 /* homepage */
 #homepage section{
-  @media (max-width: 60em) {
-    scroll-snap-align: start;
-    height: 80vh;
-  }
   scroll-snap-align: center;
-  height: 92vh;
+  height: 80vh;
   min-height: 500px;
-  padding: 8vh;
+  padding: 6vh;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   align-items: flex-start;
   gap: 1vw;
+  @media (max-width: 60em) {
+    scroll-snap-align: start;
+    height: 80vh;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
 }
 .slide-text > *{
   max-width: 40em;
@@ -206,7 +208,7 @@ nav ul li a{
   background-image: url('/images/arshift_sustainbuild_3.jpg');
   background-position: 50% 100%;
   background-size: cover;
-  height: 80vh;
+  height: 65vh;
 }
 .home-content{
   display: flex;
@@ -216,17 +218,17 @@ nav ul li a{
 }
 #homepage #about{
   background-color: var(--white-alpha);
-  height: 60vh;
+  height: 50vh;
 }
 #homepage #entracte{
   background-image: url('/images/arshift_sustainbuild_1.jpeg');
   background-position: 50% 50%;
   background-size: cover;
-  height: 80vh;  
+  height: 70vh;  
 }
 #homepage #services{
   background-color: var(--aube-alpha);
-  height: 60vh;
+  height: 50vh;
 }
 #homepage #project{
   background-color: var(--vertgrisbrun);
@@ -235,7 +237,7 @@ nav ul li a{
   background-image: url('/images/arshift_sustainbuild_2.jpeg');
   background-position: 50% 50%;
   background-size: cover;
-  height: 80vh;
+  height: 60vh;
   /* background-color: var(--sable-alpha); */
   /* background: linear-gradient(-160deg,var(--sable-alpha) 0%, var(--sable-alpha) 65%, var(--sable) 65%, var(--sable) 100%); */
 }
@@ -457,7 +459,7 @@ h1, h2, h3, h4, h5{
 }
 h1, .h1, .h-huge {
   font-size: -webkit-calc(200% + 4vw);
-  font-size: clamp(1.8em,calc(2em + 4vw),70px);
+  font-size: clamp(1.3em,calc(1.8em + 2vw),70px);
   line-height: 1.1em;
   font-weight: 600;
   margin-top: 0;
