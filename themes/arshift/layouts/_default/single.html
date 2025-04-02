@@ -36,7 +36,7 @@
 							  {{ $processedImage := .Process "fill 1500x1500" }}
 							  {{ $webpImage := $processedImage.Resize "1500x1500 webp" }}
 							  <img 
-								  src="{{ $webpImage.RelPermalink }}" 
+								  src="{{ .RelPermalink }}" 
 								  alt="{{ .Title }}"
 								  loading="lazy"
 							  >
