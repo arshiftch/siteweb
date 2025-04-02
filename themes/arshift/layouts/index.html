@@ -2,43 +2,48 @@
 <div id="homepage">
   
   <!-- <div id="output" style="position:fixed;top:10px;right:10px;border:3px solid green;"></div> -->
-  
+
   
   <section id="home">
-  {{ partial "logo.html" . }}
   
-  <!-- <h2 style="font-weight: normal;margin-bottom:0;">Sustainable building</h2> -->
   
-  <!-- <nav class="sticky-home">
-    <ul>
-      <li>
-        <a href="#about">À&nbsp;propos</a>
-      </li>
-      <li>
-        <a href="#services">Services</a>
-      </li>
-      <li>
-        <a href="#project">Projets</a>
-      </li>
-      <li>
-        <a href="#contact">Contact</a>
-      </li>
-    </ul>
-  </nav> -->
+
+    <div class="glass home-content" data-aos="fade-right"
+     data-aos-duration="800">
+      {{ partial "logo.html" . }}
+          
+      <nav class="sticky-home">
+        <ul>
+          <li>
+            <a href="#about">À&nbsp;propos</a>
+          </li>
+          <li>
+            <a href="#services">Services</a>
+          </li>
+          <li>
+            <a href="#project">Projets</a>
+          </li>
+          <li>
+            <a href="#contact">Contact</a>
+          </li>
+        </ul>
+      </nav>
+      <div class="backdrop"></div>
+      
+        
+    </div>  
+    
   
   </section>
-  
-  {{/*
-  
-  
-  
-  <section id="about">
+  <section id="about" class="slide-text">
     {{.Content}}
+  </section>
+  <section id="entracte">
     
   </section>
-  <section id="services">
-    <h1>Nos services</h1>
-    <h2>Nous proposons un nouveau système de construction en bois massif inspiré des méthodes ancestrales qui permet un démontage et un recyclage en fin de vie des parties ou du bâtiment dans son entier.</h2>
+  <section id="services" class="slide-text">
+      <h1>Nos services</h1>
+      <h2>Nous proposons un nouveau système de construction en bois massif inspiré des méthodes ancestrales qui permet un démontage et un recyclage en fin de vie des parties ou du bâtiment dans son entier.</h2>
   </section>
   <section id="project">  
   <h1>Nos projets</h1>
@@ -48,101 +53,24 @@
   </section>
   <section id="contact">  
   
-
-  <h2 style="margin-bottom: 0;padding-bottom: 0;line-height: 1;">ARshift Sàrl</h2>
-    
-  <p style="padding-top: 0;margin-top:0;margin-bottom:2vmax;">Av. du Rond-Point 7<br/>
-  CH — 1006 Lausanne<br/>
-  <a href="mailto:info@ARshift.ch">info@ARshift.ch</a></p>
+    <div class="glass p2vmax">
   
-  {{ partial "social.html" . }}  
-  
+      <h2 style="margin-bottom: 0;padding-bottom: 0;line-height: 1;">ARshift Sàrl</h2>
+        
+      <p style="padding-top: 0;margin-top:0;margin-bottom:2vmax;">Av. du Rond-Point 7<br/>
+      CH — 1006 Lausanne<br/>
+      <a href="mailto:info@ARshift.ch">info@ARshift.ch</a></p>
+      
+      {{ partial "social.html" . }}  
+    </div>
   </section>
   
-  <div class="construction">
-    <div class="tenon">
-      <span class="face left"></span>
-      <span class="face right"></span>  
-    </div>
-    <div class="sachi" id="sachi_left">
-      <!-- <span class="etalon top"></span>
-      <span class="etalon left"></span>
-      <span class="etalon right"></span> -->
-      <span class="face top"></span>
-      <span class="face left"></span>
-      <span class="face right"></span>
-      <span class="teton_group">
-        <span class="teton top"></span>
-        <span class="teton left"></span>
-        <span class="teton right"></span>
-      </span>
-    </div>
-    <div class="sachi" id="sachi_right">
-      <span class="face top"></span>
-      <span class="face left"></span>
-      <span class="face right"></span>
-      <span class="teton_group">
-        <span class="teton top"></span>
-        <span class="teton left"></span>
-        <span class="teton right"></span>
-      </span>
-    </div>
-  </div>
+ 
   
   
-  <script>
-    const container = document.querySelector("#homepage");
-    
-    // debug
-    const output = document.querySelector("#output");
-    
-    var scollingVh = 0;
-    var marginRight = 0;
-    var slideSpeedLeft = 0.4;
-    var slideSpeedRight = 0.8;
-    // const marginLeftMax = 60;
-    // const marginRightMax = 60;
-    const marginLeftMax = 200;
-    const marginRightMax = 0;
-    // const marginTopMax = 260;
-    const marginTopMax = 340;
-    // const scenario[
-    //   step[
-    //     
-    //   ]
-    // ];
-    // 
+ 
   
-    container.addEventListener("scroll", (event) => {
-      
-      scollingVh = (container.scrollTop/window.innerHeight)*100;
-      
-      if(scollingVh*slideSpeedLeft+30<=marginLeftMax){
-        document.documentElement.style.setProperty("--marginLeft", scollingVh*slideSpeedLeft+30);  
-      }else{
-        document.documentElement.style.setProperty("--marginLeft", marginLeftMax);    
-      }
-      if(scollingVh*1.16+30<=marginTopMax){
-        document.documentElement.style.setProperty("--marginTop", scollingVh*1.16+30);  
-      }else{
-        document.documentElement.style.setProperty("--marginTop", marginTopMax);    
-      }
-      
-      marginRight = 220+(container.scrollTop/window.innerHeight)*100*-slideSpeedRight;
-      if(marginRight>=marginRightMax){
-        document.documentElement.style.setProperty("--marginRight", marginRight);  
-      }else{
-        document.documentElement.style.setProperty("--marginRight", marginRightMax);    
-      }
-  
-      // debug
-        //output.textContent = `scrollTop: ${container.scrollTop/window.innerHeight*100}vX`;
-        output.textContent = `Celle de gauche: ${parseInt(scollingVh*slideSpeedLeft+40)}`;
-      // console.log(container.scrollTop);
-    });
-  </script>
-  
-  */}}
+
   
 </div>
 {{ end }}

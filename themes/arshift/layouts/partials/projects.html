@@ -2,14 +2,27 @@
   {{ range .Site.Sections }}
 	{{ range first 6 .Data.Pages }}
 	<a href="{{.Permalink}}">
-	  <h2>
-		{{.Title}}
-	  </h2>
-	  {{ if .Params.banner }}
-		  <img srcset="{{ .Params.banner | relURL }} 480w"
-	   sizes="(max-width: 800px) 200px,
-		  400px" src="{{ .Params.banner | relURL }}" alt="{{ .Title }}" class="detail-article-banner" />
-	  {{ end }}
+		
+
+	{{ if .Params.banner }}
+
+		{{ with .Resources.GetMatch .Params.banner }}
+			{{ $processedImage := .Process "fill 800x800" }}
+			{{ $webpImage := $processedImage.Resize "800x800 webp" }}
+			<img 
+				src="{{ $webpImage.RelPermalink }}" 
+				alt="{{ $.Params.title }}" 
+				class="detail-article-banner"
+				loading="lazy"
+			>
+		{{ end }}
+	
+	{{ end }}
+	  <div class="project_list_title">
+		<h4 class="glass">
+			{{.Title}}
+		</h4>  
+	  </div>
 	</a>
 	{{ end }}
   {{ end }}
