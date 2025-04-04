@@ -392,7 +392,8 @@ a.button:hover{
 /* Project listing */
 .project_list{
   display: flex;  
-  gap: 1vw;
+  flex-wrap: wrap;
+  gap: 1vmax;
   margin-top: 1vw;
   margin-bottom: 3vmax;
   z-index:99;
@@ -403,8 +404,8 @@ a.button:hover{
 }
 .project_list a{
   @media (min-width: 60em) {
-    width: 25vmax;
-    height:25vmax;
+    width: 15vmax;
+    height: 15vmax;
   }
   display: grid; 
   grid-template-areas: stack;
@@ -424,11 +425,11 @@ a.button:hover{
     grid-area: stack;
 }
 .project_list a img{
-  height: 20vmax;
+  height: 15vmax;
   width: 100%;
   @media (min-width: 60em) {
-    width: 25vmax;
-    height: 25vmax;
+    width: 15vmax;
+    height: 15vmax;
   }
   /* height:20vmax; */
   object-fit: cover;
