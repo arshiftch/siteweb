@@ -232,6 +232,8 @@ nav ul li a{
 }
 #homepage #project{
   background-color: var(--vertgrisbrun);
+  height: auto;
+  min-height: 80vh;
 }
 #homepage #contact{
   background-image: url('/images/arshift_sustainbuild_2.jpeg');
@@ -393,23 +395,26 @@ a.button:hover{
 .project_list{
   display: flex;  
   flex-wrap: wrap;
-  gap: 1vmax;
+  gap: 3vmax;
   margin-top: 1vw;
   margin-bottom: 3vmax;
   z-index:99;
   flex-direction: column;
   @media (min-width: 60em) {
+    gap: 2vmax;
     flex-direction: row;
   }
 }
 .project_list a{
-  @media (min-width: 60em) {
+  display: flex;
+  flex-direction: column;
+  /* @media (min-width: 60em) {
     width: 15vmax;
     height: 15vmax;
   }
   display: grid; 
-  grid-template-areas: stack;
-  text-decoration: none; 
+  /* grid-template-areas: stack; */
+  text-decoration: none;
   /* justify-content: space-between; */
   /* background-color: var(--black); */
   /* flex-direction: column; */
@@ -422,16 +427,16 @@ a.button:hover{
     transition-duration: 0.3s;
     transition-timing-function: ease-in-out;
     transition-property: filter, height;
-    grid-area: stack;
+    /* grid-area: stack; */
 }
 .project_list a img{
-  height: 15vmax;
+  height: 40vmax;
   width: 100%;
   @media (min-width: 60em) {
     width: 15vmax;
     height: 15vmax;
   }
-  /* height:20vmax; */
+  /* height:15vmax; */
   object-fit: cover;
   /* filter: sepia(100%); */
   filter: grayscale(100%) opacity(70%) contrast(160%);
@@ -440,15 +445,25 @@ a.button:hover{
   filter: none;
 }
 .project_list_title{
-  display: flex;
+  width: 100%;
+  @media (min-width: 60em) {
+    width: 15vmax;
+  }
+  /* display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+  justify-content: flex-end; */
+  background-color: var(--white-alpha);
+  /* background-color: red; */
+}
+a:hover .project_list_title{
+  background-color: var(--white);
 }
 .project_list a h4{
   /* height:20vmax; */
   /* display: block; */
+  color: var(--black);
   font-weight: normal;
-  padding: 0.6em 0.8em ;
+  padding: 0em 0.8em ;
   /* align-self: end; */
   /* text-align: left; */
 }
